@@ -37,10 +37,11 @@ import {
   
   type IconProps = {
     icon: React.ComponentType<TablerIconProps>
+    size?: number
   }
   
-  function Icon({ icon: Icon }: IconProps) {
-    return <Icon size={24} color={colors.gray[100]} />
+  function Icon({ icon: Icon, size = 24 }: IconProps) {
+    return <Icon size={size} color={colors.gray[100]} />
   }
   
   Button.Title = Title

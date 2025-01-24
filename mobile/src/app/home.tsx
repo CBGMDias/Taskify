@@ -2,6 +2,8 @@ import { View, useColorScheme } from "react-native"
 
 import { router } from "expo-router"
 
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 import { Steps } from "@/components/steps"
 import { Button } from "@/components/button"
 import { Welcome } from "@/components/welcome"
@@ -13,13 +15,12 @@ export default function Index() {
   const backgroundStyle = colorScheme === 'light' ? colors.logo.background : colors.logo.darkBackground
 
   return (
-    <View style={{ flex: 1, padding: 40, gap: 40, backgroundColor: backgroundStyle}}>
-      <Welcome />
-      <Steps />
+    <View style={{ flex: 1, backgroundColor: backgroundStyle }}>
+      <Header />
+      
+      <View style={{ flex: 1 }} /> {}
 
-      <Button onPress={() => router.navigate("/home")}>
-        <Button.Title>Começar</Button.Title>
-      </Button>
+      <Footer />
     </View>
   )
 }
